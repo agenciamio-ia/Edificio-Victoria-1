@@ -101,7 +101,7 @@ export default function App() {
           <img
             className="w-full h-full object-cover"
             alt="Stunning panoramic architectural view of a luxury residential building facade in Bogotá at dusk with warm interior lights glowing"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDudfbqvGqA37DvlD-8sgV4-va2O0vO__feEleiUQRZMFCwuYEMbYigWU5yk4bDE6T5LjWYc-Lph_5jXxR-t7QnZax7qShntnn-zoprt1CjTN9V_nlax67IzW8iI9ntbmkS7lizmA-ybB0madsLOF_pluC9s9YaRHy-sfjVaZEPpOht1JunCxEvv0XGvU7xIScWi4omtJWX2HdvcQVWq5no-6W7nkWDHpmr_wNy46ESURaqqorw37VzPUX3-MAi5uiLUeJLaymkSpME"
+            src="https://agenciamio.com/wp-content/uploads/2026/03/mapas-231-Ed-victoria-v01.png"
           />
           <div className="absolute inset-0 bg-secondary/40 mix-blend-multiply"></div>
         </motion.div>
@@ -163,7 +163,7 @@ export default function App() {
               <img
                 className="absolute right-0 bottom-0 w-1/2 h-full object-cover opacity-20 grayscale hover:grayscale-0 transition-all duration-700"
                 alt="Modern urban map view of Bogotá high-traffic district"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeVplxPgrWgFVGFs3Y2_ShcAB7MMyBV0NuaLX8l_gKrGzR82wjyuAqtDSz5Z3qTGH9DGTx12XHYutAKJM5eKq-Xelvb2rZk2LVvc9xagXXJRDh9TBxbfb3e4pIPT__6C2h54jPqblujGMV0JuQGsXs4EkM7w18CA1Ti0f-pTvuqok67tbSkziQ_ABMfK0Vw8JSj5Hl5KqYd6Lb7qrduOYD1aOMbU4MfJIkT3ECLM1y-ync3vvoRmyJAte00gzhFVYkZF3eKOyS-MYg"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/mapas-231-Ed-victoria-v2.png"
               />
             </div>
 
@@ -206,7 +206,7 @@ export default function App() {
 
       {/* Parallax Banner 1 */}
       <ParallaxBanner
-        image="https://picsum.photos/seed/bogotapanorama/1920/1080"
+        image="https://agenciamio.com/wp-content/uploads/2026/03/mapas-231-Ed-victoria-v3.png"
         buttonText="Agendar Cita"
         buttonHref="#contacto"
         className="h-[85vh]"
@@ -315,7 +315,7 @@ export default function App() {
               <img
                 className="w-full h-full object-cover"
                 alt="Ultra-modern open kitchen and living area"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ12d46dD6bjjOzq3_Y9Yjk3IsV9IrP0SQ6MvMvtDMIoibcFLt7z0iHjuzrfXAHwKHhyJbcMczodYNnxuUKu0lWcmqbxz9Tym0mtr-sc_6OaBcopuMtUylls5SEXs9eTislg8qQ_XCnJrf8QeGsHB6h7NpCaYLehdZohCDLGqm9_WBQAADVI8N7QPZ3wf4Br43Be_f1LHR9uFdmwPHRCrfICz5-0TVOeark_tcw_FuqDnDfzL9NFRwGzOfz0rja8cb5KdP3Xhk6uIS"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/edificio-alvaro-fachada-principal-1.jpg"
               />
             </div>
             <div className="md:col-span-5 h-[600px] flex flex-col gap-4">
@@ -346,7 +346,7 @@ export default function App() {
               <img
                 className="w-full h-full object-cover"
                 alt="Wide angle view of a contemporary apartment interior"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6U-t80OlBJVbRr-lqo4XaO4S6ZZPoGHW3fnfpzndsK1jOGB0GB3n75X1FZSRg9F1Lc97Py9Z-Fu7zGf4KstAJ3PMqZ0Ma2mG02OGVSbUiCLl6OE1UbJ7ufSifmqjFTIU9Erqk1-nxB6HN1rgWrOB4hv3ETABaNTmem2y5kMXPaUEYWFVJD7Y8jyW3zRxIdtJYykq35mWvVS9wQFxbZ8JXwIt-bcUzkAgYDnCi5TK5agcfpwjfT17WbRE2jbOFtj8vGDeXj413FgOV"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/edificio-alvaro-fachada-principal-13.jpg"
               />
             </div>
           </div>
