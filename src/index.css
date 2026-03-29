@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #775a19;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #c5a059;
+  --color-on-primary-container: #4e3700;
+  --color-secondary: #5f5e5e;
+  --color-on-secondary: #ffffff;
+  --color-surface: #f9f9f9;
+  --color-on-surface: #1a1c1c;
+  --color-surface-variant: #e2e2e2;
+  --color-on-surface-variant: #4e4639;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-highest: #e2e2e2;
+  --color-surface-dim: #dadada;
+  --color-outline: #7f7667;
+  --color-outline-variant: #d1c5b4;
+
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Manrope", sans-serif;
+
+  /* Enforce sharp corners globally per design system */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+}
+
+@layer utilities {
+  .gold-leaf-hover {
+    transition: all 0.3s ease;
+  }
+  .gold-leaf-hover:hover {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-container) 100%);
+  }
+  
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+  }
+}
+
+/* Base styles to ensure no rounded corners leak through default elements unless explicitly needed like the FAB */
+* {
+  border-radius: 0;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
+}
