@@ -336,7 +336,7 @@ export default function App() {
                 <div className="grid grid-cols-1 gap-3">
                   {FORM_OPTIONS.map((option, idx) => (
                     <label key={idx} className="flex items-start gap-3 cursor-pointer group">
-                      <input type="checkbox" name="Intereses" value={option} className="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-transparent" />
+                      <input type="checkbox" name="Intereses[]" value={option} className="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-transparent" />
                       <span className="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors leading-tight">{option}</span>
                     </label>
                   ))}
@@ -545,7 +545,7 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {FORM_OPTIONS.map((option, idx) => (
                     <label key={idx} className="flex items-start gap-3 cursor-pointer group">
-                      <input type="checkbox" name="Intereses" value={option} className="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-transparent" />
+                      <input type="checkbox" name="Intereses[]" value={option} className="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-transparent" />
                       <span className="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors leading-tight">{option}</span>
                     </label>
                   ))}
