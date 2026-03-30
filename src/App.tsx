@@ -390,7 +390,7 @@ export default function App() {
                 </a>
               </div>
             </div>
-            <div className="md:col-span-12 h-[400px]">
+            <div className="md:col-span-12 h-[520px]">
               <img
                 className="w-full h-full object-cover"
                 alt="Wide angle view of a contemporary apartment interior"
