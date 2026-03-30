@@ -394,7 +394,7 @@ export default function App() {
               <img
                 className="w-full h-full object-cover"
                 alt="Wide angle view of a contemporary apartment interior"
-                src="https://agenciamio.com/wp-content/uploads/2026/03/edificio-alvaro-fachada-principal-13.jpg"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/Plano-de-apartamento-moderno-y-minimalista.png"
               />
             </div>
             {/* 5 Nuevas Fotos */}
@@ -402,39 +402,46 @@ export default function App() {
               <img
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 alt="Espacio interior 1"
-                src="https://picsum.photos/seed/victoria1/800/600"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/Sitios-estrategicos-v2.jpg"
               />
             </div>
             <div className="md:col-span-4 h-[300px]">
               <img
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 alt="Espacio interior 2"
-                src="https://picsum.photos/seed/victoria2/800/600"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/Plano-de-apartamento-moderno-y-minimalista-v31.png"
               />
             </div>
             <div className="md:col-span-4 h-[300px]">
               <img
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 alt="Espacio interior 3"
-                src="https://picsum.photos/seed/victoria3/800/600"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/sala-moderna-edificio-victoria-agenciamio-v4.jpg"
               />
             </div>
             <div className="md:col-span-5 h-[400px]">
               <img
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 alt="Espacio interior 4"
-                src="https://picsum.photos/seed/victoria4/800/800"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/sala-moderna-edificio-victoria-agenciamio-v3.jpg"
               />
             </div>
             <div className="md:col-span-7 h-[400px]">
               <img
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 alt="Espacio interior 5"
-                src="https://picsum.photos/seed/victoria5/1200/800"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/Edificio-victoria-parqueadero-agenciamio-v4.png"
               />
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Parallax Banner */}
+      <section 
+        className="w-full h-screen bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: `url('https://agenciamio.com/wp-content/uploads/2026/03/mapas-231-Ed-victoria-v1.png')` }}
+      >
       </section>
 
       {/* Zonas Comunes */}
