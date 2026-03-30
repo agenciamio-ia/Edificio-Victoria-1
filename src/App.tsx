@@ -394,7 +394,7 @@ export default function App() {
               <img
                 className="w-full h-full object-cover"
                 alt="Wide angle view of a contemporary apartment interior"
-                src="https://agenciamio.com/wp-content/uploads/2026/03/Plano-de-apartamento-moderno-y-minimalista.png"
+                src="https://agenciamio.com/wp-content/uploads/2026/03/Plano-de-apartamento-moderno-y-minimalista-v11.jpg"
               />
             </div>
             {/* 5 Nuevas Fotos */}
