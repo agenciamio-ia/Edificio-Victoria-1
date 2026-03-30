@@ -35,7 +35,7 @@ function ParallaxBanner({ image, title, description, buttonText, buttonHref, cla
         {title && <h2 className="text-white font-headline text-4xl md:text-6xl tracking-tight mb-6">{title}</h2>}
         {description && <p className="text-white/90 font-body text-xl mb-8 font-light">{description}</p>}
         {buttonText && (
-          <a href={buttonHref} className="bg-primary text-on-primary px-10 py-5 text-sm font-label tracking-widest uppercase gold-leaf-hover transition-all inline-block shadow-2xl">
+          <a href={buttonHref} target={buttonHref?.startsWith('http') ? "_blank" : undefined} rel={buttonHref?.startsWith('http') ? "noopener noreferrer" : undefined} className="bg-primary text-on-primary px-10 py-5 text-sm font-label tracking-widest uppercase gold-leaf-hover transition-all inline-block shadow-2xl">
             {buttonText}
           </a>
         )}
@@ -46,6 +46,17 @@ function ParallaxBanner({ image, title, description, buttonText, buttonHref, cla
 
 const WHATSAPP_LINK =
   "https://api.whatsapp.com/send?phone=+573024511960&text=deseo%20informaci%C3%B3n%20del%20Apto%20Victoria";
+
+const FORM_OPTIONS = [
+  "Deseo saber el precio",
+  "Tiempo de Entrega",
+  "Planos del proyecto",
+  "Agendar una visita",
+  "Requiero mas de 4 alcobas",
+  "Tengo urgencia",
+  "Tengo un requerimiento especial",
+  "Trabajo o estudio cerca a calle 26 con Kr.30"
+];
 
 export default function App() {
   const { scrollY } = useScroll();
@@ -85,7 +96,9 @@ export default function App() {
           </a>
           <a
             className="bg-primary text-on-primary px-6 py-2 font-label text-xs tracking-widest uppercase gold-leaf-hover transition-all"
-            href="#contacto"
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Agendar Cita
           </a>
@@ -120,7 +133,9 @@ export default function App() {
             <div className="flex flex-col md:flex-row gap-6">
               <a
                 className="bg-primary text-on-primary px-10 py-5 text-sm font-label tracking-widest uppercase gold-leaf-hover transition-all inline-block shadow-2xl text-center"
-                href="#contacto"
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 PEDIR INFO
               </a>
@@ -208,7 +223,7 @@ export default function App() {
       <ParallaxBanner
         image="https://agenciamio.com/wp-content/uploads/2026/03/mapas-231-Ed-victoria-v3.png"
         buttonText="Agendar Cita"
-        buttonHref="#contacto"
+        buttonHref={WHATSAPP_LINK}
         className="h-[85vh]"
       />
 
@@ -275,12 +290,16 @@ export default function App() {
             <h3 className="font-headline text-2xl mb-8">
               Solicita el Brochure Técnico
             </h3>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form action="https://formsubmit.co/contacto@agenciamio.com" method="POST" className="space-y-6">
+              <input type="hidden" name="_subject" value="Nuevo contacto - Brochure Edificio Victoria" />
+              <input type="hidden" name="_captcha" value="false" />
               <div>
                 <label className="block text-xs font-label tracking-widest uppercase mb-2 text-on-surface-variant">
-                  Nombre Completo
+                  Nombres
                 </label>
                 <input
+                  name="Nombres"
+                  required
                   className="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary transition-all py-3 px-0 outline-none"
                   placeholder="Ej: Julian Martinez"
                   type="text"
@@ -288,15 +307,42 @@ export default function App() {
               </div>
               <div>
                 <label className="block text-xs font-label tracking-widest uppercase mb-2 text-on-surface-variant">
+                  WhatsApp
+                </label>
+                <input
+                  name="WhatsApp"
+                  required
+                  className="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary transition-all py-3 px-0 outline-none"
+                  placeholder="+57 300 000 0000"
+                  type="tel"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-label tracking-widest uppercase mb-2 text-on-surface-variant">
                   Correo Electrónico
                 </label>
                 <input
+                  name="Correo"
+                  required
                   className="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary transition-all py-3 px-0 outline-none"
                   placeholder="julian@empresa.com"
                   type="email"
                 />
               </div>
-              <button className="w-full bg-primary text-on-primary py-5 font-label tracking-widest uppercase gold-leaf-hover transition-all mt-4 text-sm">
+              <div>
+                <label className="block text-xs font-label tracking-widest uppercase mb-3 text-on-surface-variant">
+                  ¿En qué podemos ayudarte?
+                </label>
+                <div className="grid grid-cols-1 gap-3">
+                  {FORM_OPTIONS.map((option, idx) => (
+                    <label key={idx} className="flex items-start gap-3 cursor-pointer group">
+                      <input type="checkbox" name="Intereses" value={option} className="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-transparent" />
+                      <span className="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors leading-tight">{option}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <button type="submit" className="w-full bg-primary text-on-primary py-5 font-label tracking-widest uppercase gold-leaf-hover transition-all mt-4 text-sm">
                 DESCARGAR BROCHURE
               </button>
             </form>
@@ -336,7 +382,9 @@ export default function App() {
                 </p>
                 <a
                   className="text-primary font-label text-xs tracking-widest uppercase underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity w-fit"
-                  href="#"
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Ver Catálogo de Planos
                 </a>
@@ -347,6 +395,42 @@ export default function App() {
                 className="w-full h-full object-cover"
                 alt="Wide angle view of a contemporary apartment interior"
                 src="https://agenciamio.com/wp-content/uploads/2026/03/edificio-alvaro-fachada-principal-13.jpg"
+              />
+            </div>
+            {/* 5 Nuevas Fotos */}
+            <div className="md:col-span-4 h-[300px]">
+              <img
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt="Espacio interior 1"
+                src="https://picsum.photos/seed/victoria1/800/600"
+              />
+            </div>
+            <div className="md:col-span-4 h-[300px]">
+              <img
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt="Espacio interior 2"
+                src="https://picsum.photos/seed/victoria2/800/600"
+              />
+            </div>
+            <div className="md:col-span-4 h-[300px]">
+              <img
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt="Espacio interior 3"
+                src="https://picsum.photos/seed/victoria3/800/600"
+              />
+            </div>
+            <div className="md:col-span-5 h-[400px]">
+              <img
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt="Espacio interior 4"
+                src="https://picsum.photos/seed/victoria4/800/800"
+              />
+            </div>
+            <div className="md:col-span-7 h-[400px]">
+              <img
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt="Espacio interior 5"
+                src="https://picsum.photos/seed/victoria5/1200/800"
               />
             </div>
           </div>
@@ -411,35 +495,56 @@ export default function App() {
             </div>
           </div>
           <div className="p-12 md:p-20">
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+            <form action="https://formsubmit.co/contacto@agenciamio.com" method="POST" className="space-y-8">
+              <input type="hidden" name="_subject" value="Nuevo contacto - Asesoría Edificio Victoria" />
+              <input type="hidden" name="_captcha" value="false" />
               <div>
                 <label className="block text-xs font-label tracking-widest uppercase mb-3 text-on-surface-variant">
-                  Tu Nombre
+                  Nombres
                 </label>
                 <input
+                  name="Nombres"
+                  required
                   className="w-full border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 px-0 text-lg outline-none bg-transparent"
                   type="text"
                 />
               </div>
               <div>
                 <label className="block text-xs font-label tracking-widest uppercase mb-3 text-on-surface-variant">
-                  WhatsApp / Teléfono
+                  WhatsApp
                 </label>
                 <input
+                  name="WhatsApp"
+                  required
                   className="w-full border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 px-0 text-lg outline-none bg-transparent"
                   type="tel"
                 />
               </div>
               <div>
                 <label className="block text-xs font-label tracking-widest uppercase mb-3 text-on-surface-variant">
-                  Mensaje (Opcional)
+                  Correo Electrónico
                 </label>
-                <textarea
-                  className="w-full border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 px-0 text-lg resize-none outline-none bg-transparent"
-                  rows={3}
-                ></textarea>
+                <input
+                  name="Correo"
+                  required
+                  className="w-full border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 px-0 text-lg outline-none bg-transparent"
+                  type="email"
+                />
               </div>
-              <button className="bg-primary text-on-primary w-full py-6 font-label tracking-widest uppercase gold-leaf-hover transition-all text-sm">
+              <div>
+                <label className="block text-xs font-label tracking-widest uppercase mb-4 text-on-surface-variant">
+                  Me interesa:
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {FORM_OPTIONS.map((option, idx) => (
+                    <label key={idx} className="flex items-start gap-3 cursor-pointer group">
+                      <input type="checkbox" name="Intereses" value={option} className="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-transparent" />
+                      <span className="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors leading-tight">{option}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <button type="submit" className="bg-primary text-on-primary w-full py-6 font-label tracking-widest uppercase gold-leaf-hover transition-all text-sm">
                 AGENDAR LLAMADA
               </button>
             </form>
@@ -453,7 +558,7 @@ export default function App() {
         title="¿Para cuándo desea la entrega?"
         description="Contamos con diferentes etapas de entrega para adaptarnos a sus planes de inversión y mudanza. Asegure su futuro hoy mismo."
         buttonText="Consultar Plazos"
-        buttonHref="#contacto"
+        buttonHref={WHATSAPP_LINK}
       />
 
       {/* Footer */}
