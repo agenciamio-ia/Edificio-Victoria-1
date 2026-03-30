@@ -17,7 +17,7 @@ import {
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
-function ParallaxBanner({ image, title, description, buttonText, buttonHref, className = "h-[60vh]" }: { image: string, title?: string, description?: string, buttonText?: string, buttonHref?: string, className?: string }) {
+function ParallaxBanner({ image, title, description, buttonText, buttonHref, className = "h-[60vh]", overlayClass = "bg-black/50 mix-blend-multiply" }: { image: string, title?: string, description?: string, buttonText?: string, buttonHref?: string, className?: string, overlayClass?: string }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -29,7 +29,7 @@ function ParallaxBanner({ image, title, description, buttonText, buttonHref, cla
     <section ref={ref} className={`relative ${className} flex items-center justify-center overflow-hidden`}>
       <motion.div className="absolute inset-0 z-0" style={{ y, scale: 1.2 }}>
         <img src={image} alt="Banner" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-        <div className="absolute inset-0 bg-black/50 mix-blend-multiply"></div>
+        <div className={`absolute inset-0 ${overlayClass}`}></div>
       </motion.div>
       <div className="relative z-10 text-center px-8 max-w-4xl mx-auto">
         {title && <h2 className="text-white font-headline text-4xl md:text-6xl tracking-tight mb-6">{title}</h2>}
@@ -554,11 +554,13 @@ export default function App() {
 
       {/* Parallax Banner 2 */}
       <ParallaxBanner
-        image="https://picsum.photos/seed/bogota-skyline/1920/1080"
+        image="https://agenciamio.com/wp-content/uploads/2026/03/Edificio-victoria-parqueadero-agenciamio-v4.png"
         title="¿Para cuándo desea la entrega?"
         description="Contamos con diferentes etapas de entrega para adaptarnos a sus planes de inversión y mudanza. Asegure su futuro hoy mismo."
         buttonText="Consultar Plazos"
         buttonHref={WHATSAPP_LINK}
+        className="h-[85vh]"
+        overlayClass="bg-black/70 mix-blend-multiply"
       />
 
       {/* Footer */}
